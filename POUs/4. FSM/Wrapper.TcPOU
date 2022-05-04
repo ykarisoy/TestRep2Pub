@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="Wrapper" Id="{0bc2863a-f0e7-4344-aff6-4cc0fac2d441}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Wrapper
+VAR_INPUT
+	ActInputs   : ActInputs;
+	Buttons		: Buttons;  
+END_VAR
+VAR_OUTPUT
+	ActOutputs	: ActOutputs;
+	Flags		: Flags;
+END_VAR
+VAR	
+	ButtonCheck		: ButtonCheck;
+
+	Gripper			: Gripper;
+	HorizontalAct	: HorizontalAct;
+	VerticalAct		: VerticalAct;
+	CellSensor		: CellSensor;
+	CycleCount		: CycleCount;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mMap" Id="{660594b9-b959-4881-8851-34fbe3841409}">
+      <Declaration><![CDATA[METHOD mMap : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[/////// Inputs //////////
+Gripper.pClosed		:= ActInputs.Closed;
+Gripper.pOpened		:= ActInputs.Opened;
+HorizontalAct.pExtended		:= ActInputs.Extended;
+HorizontalAct.pRetracted	:= ActInputs.Retracted;
+VerticalAct.pLowered	:= ActInputs.Lowered;
+VerticalAct.pRaised		:= ActInputs.Raised;
+ButtonCheck.pEStop	:= Buttons.EStop;
+ButtonCheck.pReset	:= Buttons.Reset;
+ButtonCheck.pStart	:= Buttons.Start;
+
+/////// Outputs //////////
+ActOutputs.Close 	:= Gripper.pClose;
+ActOutputs.Extend	:= HorizontalAct.pExtend;
+ActOutputs.Raise	:= VerticalAct.pRaise;
+Flags.PartReady 	:= CellSensor.pFeeded;
+Flags.PlaceReady	:= CellSensor.pOKtoRelase;
+Flags.Picked		:= CycleCount.pPicked;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="Wrapper">
+      <LineId Id="27" Count="0" />
+    </LineIds>
+    <LineIds Name="Wrapper.mMap">
+      <LineId Id="6" Count="16" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

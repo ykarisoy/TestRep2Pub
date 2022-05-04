@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="CycleCount" Id="{039ed861-983f-49d3-8a50-019c0e5337db}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK CycleCount
+VAR
+	Picked : BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mPicked" Id="{6a453c49-015c-4cfc-b486-4d21afa9f438}">
+      <Declaration><![CDATA[METHOD mPicked : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Picked := TRUE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="pPicked" Id="{53b276ee-24ff-44ce-a4c3-a4058d5e5935}">
+      <Declaration><![CDATA[PROPERTY pPicked : BOOL]]></Declaration>
+      <Get Name="Get" Id="{5e01d6f1-6fc8-4bee-be2d-d684e0bc32e1}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pPicked := Picked;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{f9ac3772-6d28-497f-a44a-e60f68cb282f}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Picked := pPicked;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="CycleCount">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="CycleCount.mPicked">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="CycleCount.pPicked.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CycleCount.pPicked.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

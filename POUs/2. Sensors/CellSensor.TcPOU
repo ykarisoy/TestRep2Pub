@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="CellSensor" Id="{0062affa-878e-4430-a5f0-cece8346cff4}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK CellSensor
+VAR
+	OKtoRelase 	: BOOL;
+	Feeded	: BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mFeeded" Id="{a9346240-3726-4ae6-952d-d4b3065614cd}">
+      <Declaration><![CDATA[METHOD mFeeded : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Feeded := True;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mOKtoRelase" Id="{39654db2-bdff-4174-b61f-9e0c3fcfc6fc}">
+      <Declaration><![CDATA[METHOD mOKtoRelase : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[OKtoRelase := TRUE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="pFeeded" Id="{b4daa3ea-3b61-4054-9030-982b4c281dfc}">
+      <Declaration><![CDATA[PROPERTY pFeeded : BOOL]]></Declaration>
+      <Get Name="Get" Id="{556c5342-2af1-48da-b195-15f4bf830677}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pFeeded := Feeded;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{0feb8faf-8ff2-4a65-89f9-841faacdd8c2}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Feeded := pFeeded;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pOKtoRelase" Id="{4c97c793-9697-4f25-948d-3698a5eea168}">
+      <Declaration><![CDATA[PROPERTY pOKtoRelase : BOOL]]></Declaration>
+      <Get Name="Get" Id="{fdc7d8eb-4599-4d01-85d6-0bac86ee6990}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pOKtoRelase := OKtoRelase;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{9d1eac1e-f659-44c7-befa-44ab1bac9b3d}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[OKtoRelase := pOKtoRelase;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="CellSensor">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="CellSensor.mFeeded">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="CellSensor.mOKtoRelase">
+      <LineId Id="5" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="CellSensor.pFeeded.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CellSensor.pFeeded.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CellSensor.pOKtoRelase.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="CellSensor.pOKtoRelase.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

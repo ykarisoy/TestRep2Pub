@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="ButtonCheck" Id="{1fe9154a-ebe7-4454-8b4c-d5c4945e70fc}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK ButtonCheck
+VAR
+	Start 	: BOOL;
+	EStop 	: BOOL;
+	Reset	: BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mEStop" Id="{ceebe3ee-6bfd-406e-810b-501ff2ef2575}">
+      <Declaration><![CDATA[METHOD mEStop : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//pEStop := Buttons.EStop := TRUE; (Faulty)
+pEStop := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mReset" Id="{18331239-0c7b-4c32-876a-64c2c13528ff}">
+      <Declaration><![CDATA[METHOD mReset : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pReset := TRUE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mStart" Id="{21485928-264e-4c71-ae22-cb353a66a36d}">
+      <Declaration><![CDATA[METHOD mStart : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[pStart := TRUE;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="pEStop" Id="{69fb0f0b-dbe5-44bf-a64a-58ab8276e962}">
+      <Declaration><![CDATA[PROPERTY pEStop : BOOL]]></Declaration>
+      <Get Name="Get" Id="{453c2299-fe14-447e-bcf4-0e6c756b8bb6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pEStop := EStop;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{683bb7c9-b33d-4e17-be7e-394d73ccd1a6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[EStop := pEStop;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pReset" Id="{18a5e3b3-bc9c-432b-af97-893024fd5015}">
+      <Declaration><![CDATA[PROPERTY pReset : BOOL]]></Declaration>
+      <Get Name="Get" Id="{1c0bba4a-a90e-4839-a851-3b5932de4e29}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pReset := Reset;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{58c40a54-1d5e-4413-bfe5-7b3017ee4367}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Reset := pReset;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pStart" Id="{50607114-1ffb-470c-ba29-dd77a0a6669b}">
+      <Declaration><![CDATA[PROPERTY pStart : BOOL]]></Declaration>
+      <Get Name="Get" Id="{8ebe71c2-c921-4e77-b0dc-bd59403e5e4c}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pStart := Start;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{820c2e4c-585a-469a-bd89-22549140aae6}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Start := pStart;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="ButtonCheck">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.mEStop">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.mReset">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.mStart">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.pEStop.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.pEStop.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.pReset.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.pReset.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.pStart.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="ButtonCheck.pStart.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

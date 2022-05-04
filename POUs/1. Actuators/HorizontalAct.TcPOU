@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="HorizontalAct" Id="{0b4741e9-bb49-4cf0-9ec2-97a3053d9ff4}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK HorizontalAct
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+	Extend		: BOOL;
+	Extended	: BOOL;
+	Retracted 	: BOOL;
+	
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mExtend" Id="{edad9fd1-a486-4b17-8113-3f7c3c0cef09}">
+      <Declaration><![CDATA[METHOD mExtend : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//IF ActInputs.Retracted AND Flags.PartReady THEN (Faulty)
+//	Extend	:= ActOutputs.Extend := TRUE;
+//END_IF
+Extend	:= TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mExtended" Id="{c55d6d65-7b28-4ce8-80f8-40c35ce91e93}">
+      <Declaration><![CDATA[METHOD mExtended : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mRetracted" Id="{53c2ff4a-4d34-4bcc-b668-7ff4667cb8d8}">
+      <Declaration><![CDATA[METHOD mRetracted : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="pExtend" Id="{d477176f-dd99-4847-88f2-a8df32e10fc2}">
+      <Declaration><![CDATA[PROPERTY pExtend : BOOL]]></Declaration>
+      <Get Name="Get" Id="{59cc3eac-02b1-48b9-9159-09d02d31d860}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pExtend	:= Extend;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{a6e1f594-83d0-48a3-b956-300fc67c3864}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Extend	:= pExtend;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pExtended" Id="{cd348aad-8aff-4110-848b-12151dcde4f6}">
+      <Declaration><![CDATA[PROPERTY pExtended : BOOL]]></Declaration>
+      <Get Name="Get" Id="{804df2fd-f3ec-4260-86eb-0fa22e77ef87}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pExtended := Extended;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{8a972e77-8d5f-41b2-8a8d-c597841d73ee}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Extended := pExtended;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pRetracted" Id="{7d999191-23e5-4851-a4de-5efa3dcac5b1}">
+      <Declaration><![CDATA[PROPERTY pRetracted : BOOL]]></Declaration>
+      <Get Name="Get" Id="{bc3ba500-1bca-4bf2-88bf-e5cbc75505c4}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pRetracted := Retracted;
+]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{797299eb-402d-4c6d-9663-d397f1cfb7bb}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Retracted := pRetracted;
+]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="HorizontalAct">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.mExtend">
+      <LineId Id="7" Count="2" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.mExtended">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.mRetracted">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.pExtend.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.pExtend.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.pExtended.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.pExtended.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.pRetracted.Get">
+      <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="HorizontalAct.pRetracted.Set">
+      <LineId Id="5" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <DUT Name="ActInputs" Id="{f5d1ca10-a02f-478e-b629-9c06040e7410}">
+    <Declaration><![CDATA[TYPE ActInputs :
+STRUCT
+	Extended 	: BOOL;
+	Retracted 	: BOOL;
+	Raised 		: BOOL;
+	Lowered 	: BOOL;
+	Opened 		: BOOL;
+	Closed 		: BOOL;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

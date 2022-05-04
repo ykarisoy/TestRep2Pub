@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="VerticalAct" Id="{b1e5f042-2a3c-4ede-b9a2-0c96d2b214e8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK VerticalAct
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+	Raise	: BOOL;
+	Raised	: BOOL;
+	Lowered	: BOOL;
+	
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mLowered" Id="{61dc1d1c-e0a0-4745-92df-c122aafdab83}">
+      <Declaration><![CDATA[METHOD mLowered : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mRaise" Id="{6e30b7e4-a35d-4cd6-a4ec-2261cee925a9}">
+      <Declaration><![CDATA[METHOD mRaise : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//IF ActInputs.Lowered AND ActInputs.Closed THEN (Faulty)
+//	Raise	:= ActOutputs.Raise := TRUE;
+//END_IF
+
+Raise	:= TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mRaised" Id="{8a76852e-2198-4159-868a-8dbba841f2de}">
+      <Declaration><![CDATA[METHOD mRaised : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="pLowered" Id="{26abcb61-6cbb-4cad-a6d3-97ed43afad3d}">
+      <Declaration><![CDATA[PROPERTY pLowered : BOOL]]></Declaration>
+      <Get Name="Get" Id="{2479cd0a-b4fe-4f54-9d08-045dd52bf6bf}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pLowered := Lowered;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{a5af9486-a2c8-4b38-95a6-ac76b8a4ebb5}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Lowered := pLowered;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pRaise" Id="{96a8ba01-74c1-4db6-97cb-f7d5a98067f7}">
+      <Declaration><![CDATA[PROPERTY pRaise : BOOL]]></Declaration>
+      <Get Name="Get" Id="{547bb4a2-d0a8-4664-9fa3-7ed85ca956ab}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pRaise	:= Raise;
+]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{62457140-efcb-4254-a8a1-1b7cdef35bf8}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Raise	:= pRaise;
+]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pRaised" Id="{fbfbbb30-2010-46d0-85ba-ef2a4de095fa}">
+      <Declaration><![CDATA[PROPERTY pRaised : BOOL]]></Declaration>
+      <Get Name="Get" Id="{4073d389-6dd8-47e8-9b6c-71f6fb08d612}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pRaised := Raised;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{3cbee1f5-49a9-46ce-bfa9-629f52c94277}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Raised := pRaised;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="VerticalAct">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.mLowered">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.mRaise">
+      <LineId Id="7" Count="3" />
+      <LineId Id="6" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.mRaised">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.pLowered.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.pLowered.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.pRaise.Get">
+      <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.pRaise.Set">
+      <LineId Id="5" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.pRaised.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="VerticalAct.pRaised.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

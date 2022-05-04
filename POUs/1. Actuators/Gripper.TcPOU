@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="Gripper" Id="{e2e07011-251c-448f-bd09-229b297fbd8e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Gripper
+VAR
+	Close	: BOOL;
+	Closed	: BOOL;
+	Opened 	: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="mClose" Id="{17dccae4-20dd-4877-98db-cf4ed4a6c5e2}">
+      <Declaration><![CDATA[METHOD mClose : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//IF ActInputs.Opened AND Flags.PartReady THEN (Faulty)
+//	Close := ActOutputs.Close := TRUE;
+//END_IF
+
+Close := TRUE;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mClosed" Id="{11b78d51-ee76-4a45-b2f1-5569cce0e23b}">
+      <Declaration><![CDATA[METHOD mClosed : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="mOpened" Id="{de9fb022-6787-414b-ad8e-01d419699a7b}">
+      <Declaration><![CDATA[METHOD mOpened : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="pClose" Id="{812aa284-5443-43fb-bb05-4314027d3207}">
+      <Declaration><![CDATA[PROPERTY pClose : BOOL]]></Declaration>
+      <Get Name="Get" Id="{cd4d5a53-ba36-43a2-9efe-e7b681f38d55}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pClose := Close;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{7e809eb5-b39b-4d9b-a1f8-54a4ced74be3}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Close := pClose;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pClosed" Id="{87702b9a-bcde-4702-9221-05b3ca2875e2}">
+      <Declaration><![CDATA[PROPERTY pClosed : BOOL]]></Declaration>
+      <Get Name="Get" Id="{0c581010-4917-41b2-b3d8-7a46fa1a1336}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[pClosed := Closed;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{d7dfec96-1d27-4aee-940f-c68e7c0bdc53}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[Closed := pClosed;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="pOpened" Id="{fb91f2b5-5c93-409c-b5d0-217de858f212}">
+      <Declaration><![CDATA[PROPERTY pOpened : BOOL]]></Declaration>
+      <Get Name="Get" Id="{4d5d8842-7b40-4832-84e8-ba9231c21e5f}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{0ecad2ea-6889-4db8-8f2f-0416b723b4b7}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <LineIds Name="Gripper">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.mClose">
+      <LineId Id="6" Count="3" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.mClosed">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.mOpened">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.pClose.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.pClose.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.pClosed.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.pClosed.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.pOpened.Get">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="Gripper.pOpened.Set">
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

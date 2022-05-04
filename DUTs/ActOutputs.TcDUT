@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <DUT Name="ActOutputs" Id="{a89b4b96-e750-42a7-ac40-2f9d2702ef03}">
+    <Declaration><![CDATA[TYPE ActOutputs :
+STRUCT
+	Extend 	: BOOL;
+	Raise 	: BOOL;
+	Close 	: BOOL;
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

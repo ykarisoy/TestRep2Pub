@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <POU Name="MAIN" Id="{259cb9c3-c65a-4752-87a5-cbb355eff08d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	Station : Wrapper;
+	
+	ActInputs	: ActInputs;
+	ActOutputs	: ActOutputs;
+	Buttons		: Buttons;
+	Flags		: Flags;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Station(ActInputs 	:= ActInputs,
+		ActOutputs	=> ActOutputs,
+		Buttons		:= Buttons,
+		Flags		=> Flags);]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="12" Count="1" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

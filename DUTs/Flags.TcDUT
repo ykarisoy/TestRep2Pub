@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.9">
+  <DUT Name="Flags" Id="{cf3d7fc7-fbe9-4769-b1ca-e139c8c3e269}">
+    <Declaration><![CDATA[TYPE Flags :
+STRUCT
+	PlaceReady	: BOOL;
+	PartReady	: BOOL;
+	Picked		: Bool;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
